@@ -29,7 +29,10 @@ jobs:
       - uses: julia-actions/julia-buildpkg@v1
 
       - name: run Literate
-        run: cd PorousConvection; julia --color=yes --project -e 'cd("scripts"); include("literate-script.jl")'
+        run: |
+          cd PorousConvection
+          julia --color=yes --project -e 'using Pkg; Pkg.instantiate()'
+          julia --color=yes --project -e 'cd("scripts"); include("literate-script.jl")'
 
       - name: setup git config
         run: |
