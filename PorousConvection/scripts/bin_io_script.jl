@@ -15,8 +15,8 @@ function main()
     B = similar(A)
     save_array("out_A",A)
     load_array("out_A",B)
-    heatmap(A)
-    return
+    return B
 end
 
-main()
+B = main()
+heatmap(B)
