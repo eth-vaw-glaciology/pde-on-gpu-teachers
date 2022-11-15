@@ -16,10 +16,11 @@ function main()
     B = similar(A)
     save_array("out_A",A)
     load_array("out_A",B)
-    heatmap(A)
-    return
+    return B
 end
 
-main()
+B = main()
+heatmap(B)
 ````
+![](bin_io_script-1.svg)
 
