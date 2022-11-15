@@ -33,6 +33,7 @@ jobs:
           cd PorousConvection
           julia --color=yes --project -e 'using Pkg; Pkg.instantiate()'
           julia --color=yes --project -e 'cd("scripts"); include("literate-script.jl")'
+          cd ..
 
       - name: setup git config
         run: |
